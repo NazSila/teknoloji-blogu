@@ -28,3 +28,7 @@ pip install -r requirements.txt
 venv\Scripts\activate
 py manage.py migrate
 py manage.py runserver
+
+## Canlı Demo
+
+https://teknoloji-blogu.onrender.com
