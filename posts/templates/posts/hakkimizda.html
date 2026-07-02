@@ -1,38 +1,66 @@
-<h2>Hakkımızda</h2>
+{% extends "posts/base.html" %}
 
-<p>
-    Teknoloji Blogu, yazılım geliştirme ve bilişim dünyasına ilgi duyan herkes için
-    hazırlanmış bir bilgi paylaşım platformudur.
-</p>
+{% block content %}
 
-<p>
-    Blogumuzda Python, Django, Java, Spring Boot, React, yapay zeka, veritabanı
-    teknolojileri ve modern web geliştirme konularında güncel içerikler
-    paylaşmayı hedefliyoruz.
-</p>
+<div class="card shadow-sm">
+    <div class="card-body">
 
-<p>
-    Amacımız; hem yeni başlayan geliştiricilere yol göstermek hem de deneyimli
-    yazılımcılar için faydalı kaynaklar sunmaktır. Teknik makaleler, uygulamalı
-    örnekler, proje geliştirme süreçleri ve sektördeki yeni teknolojiler düzenli
-    olarak yayınlanmaktadır.
-</p>
+        <h1 class="mb-4">📖 Hakkımızda</h1>
 
-<p>
-    Teknoloji sürekli gelişiyor. Biz de bu gelişmeleri yakından takip ederek
-    kaliteli ve anlaşılır içerikleri okuyucularımızla buluşturmaya devam edeceğiz.
-</p>
+        <p class="lead">
+            Teknoloji Blogu, yazılım geliştirme ve bilişim dünyasına ilgi duyan
+            herkes için hazırlanmış bir bilgi paylaşım platformudur.
+        </p>
 
-<hr>
+        <hr>
 
-<h4>📌 Yayınlanan Başlıca Konular</h4>
+        <p>
+            Blogumuzda <strong>Python</strong>, <strong>Django</strong>,
+            <strong>Java</strong>, <strong>Spring Boot</strong>,
+            <strong>React</strong>, <strong>Yapay Zeka</strong> ve modern web
+            teknolojileri hakkında güncel içerikler paylaşmayı hedefliyoruz.
+        </p>
 
-<ul>
-    <li>Python</li>
-    <li>Django</li>
-    <li>Java & Spring Boot</li>
-    <li>React</li>
-    <li>Yapay Zeka</li>
-    <li>Veritabanı Sistemleri</li>
-    <li>Web Teknolojileri</li>
-</ul>
+        <p>
+            Amacımız; hem yazılım öğrenmeye yeni başlayan geliştiricilere yol
+            göstermek hem de deneyimli yazılımcılar için kaliteli teknik
+            içerikler sunmaktır.
+        </p>
+
+        <p>
+            Düzenli olarak eğitim yazıları, proje geliştirme rehberleri,
+            ipuçları ve sektördeki yeni teknolojileri okuyucularımızla
+            buluşturuyoruz.
+        </p>
+
+        <div class="alert alert-primary mt-4">
+            🚀 Bilginin paylaşıldıkça çoğaldığına inanıyor ve sürekli öğrenmeye
+            devam ediyoruz.
+        </div>
+
+        <h3 class="mt-5 mb-3">📚 Yayınlanan Başlıca Konular</h3>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">🐍 Python</li>
+                    <li class="list-group-item">🎯 Django</li>
+                    <li class="list-group-item">☕ Java & Spring Boot</li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">⚛️ React</li>
+                    <li class="list-group-item">🤖 Yapay Zeka</li>
+                    <li class="list-group-item">🗄️ Veritabanı Sistemleri</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
