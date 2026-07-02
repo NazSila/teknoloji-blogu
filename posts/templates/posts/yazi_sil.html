@@ -1,0 +1,34 @@
+{% extends "posts/base.html" %}
+
+{% block content %}
+
+<h2>Yazıyı Sil</h2>
+
+<p>
+
+    <b>{{ yazi.baslik }}</b>
+
+    isimli yazıyı silmek istiyor musunuz?
+
+</p>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <button class="btn btn-danger">
+
+        Evet Sil
+
+    </button>
+
+    <a href="/"
+       class="btn btn-secondary">
+
+        İptal
+
+    </a>
+
+</form>
+
+{% endblock %}

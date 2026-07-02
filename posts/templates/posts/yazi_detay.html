@@ -1,0 +1,94 @@
+{% extends "posts/base.html" %}
+
+{% block content %}
+
+<a href="{% url 'ana_sayfa' %}"
+   class="btn btn-outline-primary mb-4">
+    ← Ana Sayfaya Dön
+</a>
+<div class="card shadow-lg">
+    <div class="card-body p-5">
+
+        <h1>{{ yazi.baslik }}</h1>
+
+        <hr>
+
+        {% if yazi.gorsel_url %}
+        <img src="{{ yazi.gorsel_url }}"
+             class="img-fluid rounded mb-4 w-100">
+        {% endif %}
+
+        <p class="text-muted">
+            📅 {{ yazi.olusturulma_tarihi|date:"d F Y H:i" }}
+        </p>
+
+        <p class="lead">
+            {{ yazi.ozet }}
+        </p>
+
+        <hr>
+
+        <div class="fs-5">
+            {{ yazi.icerik|linebreaks }}
+        </div>
+
+        <div class="mt-4">
+
+            <a href="{% url 'yazi_guncelle' yazi.id %}"
+               class="btn btn-warning">
+                ✏️ Güncelle
+            </a>
+
+            <a href="{% url 'yazi_sil' yazi.id %}"
+               class="btn btn-danger">
+                🗑️ Sil
+            </a>
+
+        </div>
+
+        <hr class="my-5">
+
+        <h3>
+            Yorumlar ({{ yorumlar.count }})
+        </h3>
+
+        {% for yorum in yorumlar %}
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+                <h6 class="fw-bold">
+                    {{ yorum.ad_soyad }}
+                </h6>
+
+                <small class="text-muted">
+                    {{ yorum.olusturulma_tarihi|date:"d.m.Y H:i" }}
+                </small>
+
+                <p class="mt-3">
+                    {{ yorum.yorum }}
+                </p>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-muted">
+            Henüz yorum yapılmamış.
+        </p>
+        {% endfor %}
+
+        <hr class="my-5">
+
+        <h3>Yorum Yap</h3>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button class="btn btn-primary">
+                Yorumu Gönder
+            </button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

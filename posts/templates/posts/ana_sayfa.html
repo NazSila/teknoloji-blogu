@@ -1,0 +1,79 @@
+{% extends "posts/base.html" %}
+
+{% block content %}
+
+<div class="p-5 mb-5 bg-primary text-white rounded">
+
+    <h1>Teknoloji Bloguna Hoş Geldiniz</h1>
+
+    {% if arama %}
+    <p class="text-muted">
+        "{{ arama }}" için arama sonuçları
+    </p>
+    {% endif %}
+
+    <p>
+        Django ve Bootstrap kullanılarak geliştirilmiş örnek blog uygulaması.
+    </p>
+
+    <a href="{% url 'yazi_ekle' %}" class="btn btn-light btn-lg mt-3">
+        ✍️ Yeni Yazı Oluştur
+    </a>
+
+</div>
+
+<div class="row">
+
+    {% for yazi in yazilar %}
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card h-100 shadow-sm">
+
+            {% if yazi.gorsel_url %}
+            <img src="{{ yazi.gorsel_url }}" class="card-img-top">
+            {% endif %}
+
+            <div class="card-body">
+
+                <h5>{{ yazi.baslik }}</h5>
+
+                <p>{{ yazi.ozet }}</p>
+                <a href="{% url 'yazi_detay' yazi.id %}"
+                   class="btn btn-primary">
+                    İncele
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<div class="row mb-5">
+
+    <div class="col-md-6">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h2>{{ toplam_yazi }}</h2>
+                <p>Toplam Yazı</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h2>{{ toplam_mesaj }}</h2>
+                <p>İletişim Mesajı</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
