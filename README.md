@@ -15,6 +15,7 @@ https://teknoloji-blogu.onrender.com
 - Yazı Güncelle
 - Yazı Sil
 - İletişim Formu
+- İlgili Yazıya Yorum
 - Arama
 - Django Admin Paneli
 
